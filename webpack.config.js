@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); //dependencia instalada via npm
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   entry: path.resolve(__dirname, "./src/index.js"),
@@ -31,5 +32,6 @@ module.exports = {
   plugins: [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({ template: "public/index.html" }),
+    new Dotenv(),
   ],
 };
